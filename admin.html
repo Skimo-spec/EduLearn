@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard - EduLearn">
+  <title>Admin Dashboard - EduLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="admin">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn Admin</span>
+      </a>
+      
+      <div class="header-actions" style="margin-left: auto;">
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+        
+        <div class="user-menu dropdown">
+          <button class="dropdown-trigger btn btn-ghost">
+            <img src="" alt="User" class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span class="user-name"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">View Site</a>
+            <a href="#profile" class="dropdown-item">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a href="#logout" class="dropdown-item logout-btn">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="admin-layout">
+          <!-- Sidebar -->
+          <aside class="admin-sidebar">
+            <nav class="admin-nav">
+              <a href="#dashboard" class="admin-nav-item active" data-section="dashboard">
+                <span>📊</span>
+                <span>Dashboard</span>
+              </a>
+              <a href="#users" class="admin-nav-item" data-section="users">
+                <span>👥</span>
+                <span>Users</span>
+              </a>
+              <a href="#courses" class="admin-nav-item" data-section="courses">
+                <span>📚</span>
+                <span>Courses</span>
+              </a>
+              <a href="#blogs" class="admin-nav-item" data-section="blogs">
+                <span>📝</span>
+                <span>Blog Posts</span>
+              </a>
+              <a href="#orders" class="admin-nav-item" data-section="orders">
+                <span>🛒</span>
+                <span>Orders</span>
+              </a>
+              <a href="#settings" class="admin-nav-item" data-section="settings">
+                <span>⚙️</span>
+                <span>Settings</span>
+              </a>
+            </nav>
+          </aside>
+          
+          <!-- Main Content -->
+          <div class="admin-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="admin-section active">
+              <div class="admin-header">
+                <h1 class="admin-title">Dashboard</h1>
+                <p style="color: var(--color-gray-600);">Welcome back! Here's what's happening today.</p>
+              </div>
+              
+              <!-- Stats Grid -->
+              <div class="grid stats-grid mb-8">
+                <div class="stat-card">
+                  <div class="stat-icon primary">
+                    <span>👥</span>
+                  </div>
+                  <div class="stat-info">
+                    <h3 class="stat-users">0</h3>
+                    <p>Total Users</p>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon success">
+                    <span>📚</span>
+                  </div>
+                  <div class="stat-info">
+                    <h3 class="stat-courses">0</h3>
+                    <p>Total Courses</p>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon warning">
+                    <span>💰</span>
+                  </div>
+                  <div class="stat-info">
+                    <h3 class="stat-sales">$0</h3>
+                    <p>Total Sales</p>
+                  </div>
+                </div>
+                
+                <div class="stat-card">
+                  <div class="stat-icon info">
+                    <span>🛒</span>
+                  </div>
+                  <div class="stat-info">
+                    <h3 class="stat-orders">0</h3>
+                    <p>Total Orders</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Recent Activity -->
+              <div class="card">
+                <div class="card-header">
+                  <h2>Recent Orders</h2>
+                </div>
+                <div class="card-body">
+                  <div class="data-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Customer</th>
+                          <th>Course</th>
+                          <th>Amount</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody id="recentOrders">
+                        <tr>
+                          <td colspan="6" style="text-align: center; padding: var(--spacing-8); color: var(--color-gray-500);">
+                            No orders yet
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Users Section -->
+            <div id="users" class="admin-section">
+              <div class="admin-header">
+                <h1 class="admin-title">Users Management</h1>
+                <button class="btn btn-primary">
+                  <span>➕</span>
+                  <span>Add User</span>
+                </button>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <input type="search" class="form-input" placeholder="Search users..." style="max-width: 300px;">
+                </div>
+                <div class="card-body">
+                  <div class="data-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Role</th>
+                          <th>Joined</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Admin User</td>
+                          <td>admin@edulearn.com</td>
+                          <td><span class="badge badge-primary">Admin</span></td>
+                          <td>Jan 1, 2024</td>
+                          <td>
+                            <div class="table-actions">
+                              <button class="action-btn edit">Edit</button>
+                              <button class="action-btn delete">Delete</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>John Instructor</td>
+                          <td>instructor@edulearn.com</td>
+                          <td><span class="badge badge-success">Instructor</span></td>
+                          <td>Jan 5, 2024</td>
+                          <td>
+                            <div class="table-actions">
+                              <button class="action-btn edit">Edit</button>
+                              <button class="action-btn delete">Delete</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Jane Student</td>
+                          <td>student@edulearn.com</td>
+                          <td><span class="badge badge-secondary">Student</span></td>
+                          <td>Jan 10, 2024</td>
+                          <td>
+                            <div class="table-actions">
+                              <button class="action-btn edit">Edit</button>
+                              <button class="action-btn delete">Delete</button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Courses Section -->
+            <div id="courses" class="admin-section">
+              <div class="admin-header">
+                <h1 class="admin-title">Courses Management</h1>
+                <button class="btn btn-primary">
+                  <span>➕</span>
+                  <span>Add Course</span>
+                </button>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <input type="search" class="form-input" placeholder="Search courses..." style="max-width: 300px;">
+                </div>
+                <div class="card-body">
+                  <div class="data-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Category</th>
+                          <th>Price</th>
+                          <th>Students</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="coursesList">
+                        <!-- Courses will be loaded here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Blog Posts Section -->
+            <div id="blogs" class="admin-section">
+              <div class="admin-header">
+                <h1 class="admin-title">Blog Posts Management</h1>
+                <button class="btn btn-primary">
+                  <span>➕</span>
+                  <span>Add Post</span>
+                </button>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <input type="search" class="form-input" placeholder="Search posts..." style="max-width: 300px;">
+                </div>
+                <div class="card-body">
+                  <div class="data-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Category</th>
+                          <th>Author</th>
+                          <th>Date</th>
+                          <th>Views</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="blogsList">
+                        <!-- Blog posts will be loaded here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Orders Section -->
+            <div id="orders" class="admin-section">
+              <div class="admin-header">
+                <h1 class="admin-title">Orders Management</h1>
+                <button class="btn btn-outline">
+                  <span>📥</span>
+                  <span>Export CSV</span>
+                </button>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <input type="search" class="form-input" placeholder="Search orders..." style="max-width: 300px;">
+                </div>
+                <div class="card-body">
+                  <div class="data-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Customer</th>
+                          <th>Items</th>
+                          <th>Total</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="ordersList">
+                        <tr>
+                          <td colspan="7" style="text-align: center; padding: var(--spacing-8); color: var(--color-gray-500);">
+                            No orders yet
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Settings Section -->
+            <div id="settings" class="admin-section">
+              <div class="admin-header">
+                <h1 class="admin-title">Settings</h1>
+              </div>
+              
+              <div class="card">
+                <div class="card-header">
+                  <h2>General Settings</h2>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <label class="form-label">Site Name</label>
+                      <input type="text" class="form-input" value="EduLearn">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Site Description</label>
+                      <textarea class="form-input" rows="3">Learn without limits with EduLearn</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="form-label">Contact Email</label>
+                      <input type="email" class="form-input" value="contact@edulearn.com">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer;">
+                        <input type="checkbox" class="form-checkbox" checked>
+                        <span>Enable user registration</span>
+                      </label>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer;">
+                        <input type="checkbox" class="form-checkbox" checked>
+                        <span>Enable course reviews</span>
+                      </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Settings</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Section navigation
+    document.querySelectorAll('.admin-nav-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Update active nav item
+        document.querySelectorAll('.admin-nav-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Show corresponding section
+        const sectionId = this.dataset.section;
+        document.querySelectorAll('.admin-section').forEach(section => {
+          section.classList.remove('active');
+          section.style.display = 'none';
+        });
+        
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+          targetSection.style.display = 'block';
+        }
+      });
+    });
+    
+    // Load courses into table
+    function loadCoursesTable() {
+      const courses = Data.getCourses();
+      const tbody = document.getElementById('coursesList');
+      
+      if (tbody && courses.length > 0) {
+        tbody.innerHTML = courses.slice(0, 5).map(course => `
+          <tr>
+            <td>${course.title}</td>
+            <td>${course.category}</td>
+            <td>$${course.price}</td>
+            <td>${course.studentsCount.toLocaleString()}</td>
+            <td><span class="badge badge-success">Active</span></td>
+            <td>
+              <div class="table-actions">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+    }
+    
+    // Load blogs into table
+    function loadBlogsTable() {
+      const blogs = Data.getBlogs();
+      const tbody = document.getElementById('blogsList');
+      
+      if (tbody && blogs.length > 0) {
+        tbody.innerHTML = blogs.map(blog => `
+          <tr>
+            <td>${blog.title}</td>
+            <td>${blog.category}</td>
+            <td>${blog.author.name}</td>
+            <td>${blog.date}</td>
+            <td>${blog.views.toLocaleString()}</td>
+            <td>
+              <div class="table-actions">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+    }
+    
+    // Initialize tables
+    loadCoursesTable();
+    loadBlogsTable();
+    
+    // Export CSV functionality
+    document.querySelector('[onclick*="Export"]')?.addEventListener('click', function() {
+      const orders = Storage.orders.get();
+      
+      if (orders.length === 0) {
+        UI.showToast('No orders to export', 'warning');
+        return;
+      }
+      
+      // Create CSV content
+      const headers = ['Order ID', 'Customer', 'Total', 'Date', 'Status'];
+      const rows = orders.map(order => [
+        order.id,
+        order.billingInfo?.fullName || 'N/A',
+        order.total,
+        new Date(order.createdAt).toLocaleDateString(),
+        order.status
+      ]);
+      
+      const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.join(','))
+      ].join('\n');
+      
+      // Download CSV
+      const blob = new Blob([csvContent], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `orders-${Date.now()}.csv`;
+      a.click();
+      
+      UI.showToast('Orders exported successfully!', 'success');
+    });
+  </script>
+</body>
+</html>
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Course Details - Learn more about this course">
+  <title>Course Details - EduLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="course-details">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </a>
+      
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link active">Courses</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+        
+        <a href="checkout.html" class="btn btn-ghost" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+        
+        <div class="auth-buttons" style="display: flex; gap: var(--spacing-3);">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+        
+        <div class="user-menu dropdown" style="display: none;">
+          <button class="dropdown-trigger btn btn-ghost">
+            <img src="" alt="User" class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span class="user-name"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#profile" class="dropdown-item">Profile</a>
+            <a href="admin.html" class="dropdown-item admin-only" style="display: none;">Admin Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a href="#logout" class="dropdown-item logout-btn">Logout</a>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </span>
+      <button class="modal-close" aria-label="Close Menu">×</button>
+    </div>
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="courses.html" class="mobile-nav-link active">Courses</a></li>
+      <li><a href="checkout.html" class="mobile-nav-link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+    </ul>
+  </nav>
+  
+  <div class="mobile-overlay"></div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Course Hero -->
+    <section class="course-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+          <span class="breadcrumb-separator">›</span>
+          <div class="breadcrumb-item"><a href="courses.html">Courses</a></div>
+          <span class="breadcrumb-separator">›</span>
+          <div class="breadcrumb-item active">Course Details</div>
+        </div>
+        
+        <div class="course-hero-content" id="courseHero">
+          <div class="course-hero-info">
+            <span class="badge badge-primary" id="courseCategory">Web Development</span>
+            <h1 id="courseTitle">Complete Web Development Bootcamp</h1>
+            <p id="courseDescription">Learn HTML, CSS, JavaScript, React, Node.js, and more in this comprehensive bootcamp.</p>
+            
+            <div class="course-hero-meta">
+              <div class="course-hero-meta-item">
+                <span>⭐</span>
+                <span><strong id="courseRating">4.8</strong> (<span id="courseReviews">1,250</span> reviews)</span>
+              </div>
+              <div class="course-hero-meta-item">
+                <span>👥</span>
+                <span><strong id="courseStudents">15,420</strong> students</span>
+              </div>
+              <div class="course-hero-meta-item">
+                <span>🕐</span>
+                <span><strong id="courseDuration">40 hours</strong></span>
+              </div>
+              <div class="course-hero-meta-item">
+                <span>📚</span>
+                <span><strong id="courseLessons">156</strong> lessons</span>
+              </div>
+            </div>
+            
+            <div class="course-hero-meta">
+              <div class="course-hero-meta-item">
+                <span>👨‍🏫</span>
+                <span>Created by <strong id="instructorName">John Instructor</strong></span>
+              </div>
+              <div class="course-hero-meta-item">
+                <span>🌐</span>
+                <span id="courseLanguage">English</span>
+              </div>
+              <div class="course-hero-meta-item">
+                <span>📅</span>
+                <span>Updated <span id="courseUpdated">Jan 2024</span></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="course-video-preview">
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Course Preview" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Course Content -->
+    <section class="section">
+      <div class="container">
+        <div class="sidebar-layout">
+          <!-- Main Content -->
+          <div class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+              <button class="tab active" data-tab="overview">Overview</button>
+              <button class="tab" data-tab="curriculum">Curriculum</button>
+              <button class="tab" data-tab="instructor">Instructor</button>
+              <button class="tab" data-tab="reviews">Reviews</button>
+              <button class="tab" data-tab="faq">FAQ</button>
+            </div>
+            
+            <div class="tab-content">
+              <!-- Overview Tab -->
+              <div class="tab-pane active" id="overview">
+                <h2>What You'll Learn</h2>
+                <ul id="whatYouLearn" style="list-style: none; padding: 0;">
+                  <li style="padding: var(--spacing-3) 0; border-bottom: 1px solid var(--color-gray-200); display: flex; gap: var(--spacing-3);">
+                    <span>✓</span>
+                    <span>Build responsive websites with HTML, CSS, and JavaScript</span>
+                  </li>
+                  <li style="padding: var(--spacing-3) 0; border-bottom: 1px solid var(--color-gray-200); display: flex; gap: var(--spacing-3);">
+                    <span>✓</span>
+                    <span>Master modern JavaScript ES6+ features</span>
+                  </li>
+                  <li style="padding: var(--spacing-3) 0; border-bottom: 1px solid var(--color-gray-200); display: flex; gap: var(--spacing-3);">
+                    <span>✓</span>
+                    <span>Create dynamic web applications with React</span>
+                  </li>
+                </ul>
+                
+                <h2 class="mt-8">Requirements</h2>
+                <ul id="requirements" style="list-style: disc; padding-left: var(--spacing-8);">
+                  <li style="padding: var(--spacing-2) 0;">Basic computer skills</li>
+                  <li style="padding: var(--spacing-2) 0;">No programming experience required</li>
+                  <li style="padding: var(--spacing-2) 0;">A computer with internet connection</li>
+                </ul>
+                
+                <h2 class="mt-8">Description</h2>
+                <p id="fullDescription">This comprehensive web development bootcamp will take you from beginner to advanced level. You'll learn everything you need to become a professional web developer.</p>
+              </div>
+              
+              <!-- Curriculum Tab -->
+              <div class="tab-pane" id="curriculum">
+                <h2>Course Curriculum</h2>
+                <div class="curriculum-section" id="curriculumList">
+                  <!-- Curriculum modules will be loaded here -->
+                  <div class="curriculum-module">
+                    <div class="curriculum-module-header">
+                      <h3 class="curriculum-module-title">Introduction to Web Development</h3>
+                      <span>3 lessons</span>
+                    </div>
+                    <div class="curriculum-lessons">
+                      <div class="curriculum-lesson">
+                        <div class="curriculum-lesson-title">
+                          <span>▶️</span>
+                          <span>Welcome to the Course</span>
+                        </div>
+                        <span class="curriculum-lesson-duration">5:30</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Instructor Tab -->
+              <div class="tab-pane" id="instructor">
+                <h2>About the Instructor</h2>
+                <div style="display: flex; gap: var(--spacing-6); align-items: start; margin-top: var(--spacing-6);">
+                  <img id="instructorAvatar" src="https://ui-avatars.com/api/?name=John+Instructor&background=10B981&color=fff" alt="Instructor" style="width: 120px; height: 120px; border-radius: 50%;">
+                  <div>
+                    <h3 id="instructorFullName">John Instructor</h3>
+                    <p id="instructorTitle" style="color: var(--color-gray-600); margin-bottom: var(--spacing-4);">Senior Web Developer</p>
+                    <p id="instructorBio">10+ years of experience in web development. Passionate about teaching and helping students achieve their goals.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Reviews Tab -->
+              <div class="tab-pane" id="reviews">
+                <h2>Student Reviews</h2>
+                <div id="reviewsList" style="margin-top: var(--spacing-6);">
+                  <div class="comment">
+                    <div class="comment-header">
+                      <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=random" alt="Sarah" class="comment-avatar">
+                      <div>
+                        <div class="comment-author">Sarah Johnson</div>
+                        <div class="comment-date">⭐⭐⭐⭐⭐ • Jan 10, 2024</div>
+                      </div>
+                    </div>
+                    <p class="comment-text">Excellent course! Very comprehensive and well-structured.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- FAQ Tab -->
+              <div class="tab-pane" id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div style="margin-top: var(--spacing-6);">
+                  <div class="curriculum-module">
+                    <div class="curriculum-module-header">
+                      <h3 class="curriculum-module-title">Is this course suitable for beginners?</h3>
+                    </div>
+                    <div class="curriculum-lessons">
+                      <div style="padding: var(--spacing-4);">
+                        <p>Yes! This course is designed for complete beginners with no prior programming experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="curriculum-module">
+                    <div class="curriculum-module-header">
+                      <h3 class="curriculum-module-title">Do I get a certificate?</h3>
+                    </div>
+                    <div class="curriculum-lessons">
+                      <div style="padding: var(--spacing-4);">
+                        <p>Yes! You'll receive a certificate of completion that you can share on LinkedIn and your resume.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="course-enrollment-card">
+              <div class="enrollment-price" id="coursePrice">$99.99</div>
+              
+              <button class="btn btn-primary btn-block btn-lg enroll-btn" data-course-id="1">
+                Enroll Now
+              </button>
+              
+              <button class="btn btn-outline btn-block add-to-cart" data-course-id="1">
+                Add to Cart
+              </button>
+              
+              <ul class="enrollment-features">
+                <li><span>✓</span> <span>Lifetime access</span></li>
+                <li><span>✓</span> <span>Certificate of completion</span></li>
+                <li><span>✓</span> <span>30-day money-back guarantee</span></li>
+                <li><span>✓</span> <span>Access on mobile and desktop</span></li>
+                <li><span>✓</span> <span>Downloadable resources</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Related Courses -->
+    <section class="section" style="background-color: var(--color-gray-50);">
+      <div class="container">
+        <h2 class="section-title">Related Courses</h2>
+        <div class="grid course-grid" id="relatedCourses">
+          <!-- Related courses will be loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <button class="language-switcher">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+  
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up for EduLearn - Start your learning journey today">
+  <title>Sign Up - EduLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="signup">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </a>
+      
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+        <a href="login.html" class="btn btn-ghost">Login</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <div class="auth-container">
+      <div class="auth-card">
+        <!-- Header -->
+        <div class="auth-header">
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-subtitle">Join thousands of learners worldwide</p>
+        </div>
+        
+        <!-- Signup Form -->
+        <form id="signupForm" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="name" class="form-label required">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Enter your full name"
+              required
+              minlength="2"
+              autocomplete="name"
+            >
+          </div>
+          
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label required">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            >
+          </div>
+          
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password" class="form-label required">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form-input" 
+              placeholder="Create a password"
+              required
+              minlength="8"
+              autocomplete="new-password"
+            >
+            <div class="password-strength">
+              <div class="strength-bar">
+                <div class="strength-fill"></div>
+              </div>
+              <span class="strength-text"></span>
+            </div>
+          </div>
+          
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword" class="form-label required">Confirm Password</label>
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              name="confirmPassword" 
+              class="form-input" 
+              placeholder="Confirm your password"
+              required
+              minlength="8"
+              autocomplete="new-password"
+            >
+          </div>
+          
+          <!-- Role Selection -->
+          <div class="form-group">
+            <label class="form-label required">I want to</label>
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+              <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-3); border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
+                <input type="radio" name="role" value="student" class="form-radio" checked>
+                <div>
+                  <strong>Learn (Student)</strong>
+                  <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Access courses and earn certificates</p>
+                </div>
+              </label>
+              
+              <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer; padding: var(--spacing-3); border: 1px solid var(--color-gray-300); border-radius: var(--radius-md);">
+                <input type="radio" name="role" value="instructor" class="form-radio">
+                <div>
+                  <strong>Teach (Instructor)</strong>
+                  <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Create and sell courses</p>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Terms & Conditions -->
+          <div class="form-group">
+            <label style="display: flex; align-items: start; gap: var(--spacing-2); cursor: pointer;">
+              <input type="checkbox" name="terms" class="form-checkbox" required style="margin-top: 4px;">
+              <span style="font-size: var(--font-size-sm);">
+                I agree to the <a href="#terms" style="color: var(--color-primary);">Terms and Conditions</a> 
+                and <a href="#privacy" style="color: var(--color-primary);">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Create Account
+          </button>
+        </form>
+        
+        <!-- Footer -->
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <button class="language-switcher">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 

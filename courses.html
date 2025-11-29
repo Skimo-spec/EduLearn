@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Courses - Explore our comprehensive collection of online courses">
+  <title>Courses - EduLearn</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="courses">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </a>
+
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link active">Courses</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+
+        <a href="checkout.html" class="btn btn-ghost" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+
+        <div class="auth-buttons" style="display: flex; gap: var(--spacing-3);">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+
+        <div class="user-menu dropdown" style="display: none;">
+          <button class="dropdown-trigger btn btn-ghost">
+            <img src="" alt="User" class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span class="user-name"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#profile" class="dropdown-item">Profile</a>
+            <a href="admin.html" class="dropdown-item admin-only" style="display: none;">Admin Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a href="#logout" class="dropdown-item logout-btn">Logout</a>
+          </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </span>
+      <button class="modal-close" aria-label="Close Menu">×</button>
+    </div>
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="courses.html" class="mobile-nav-link active">Courses</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="checkout.html" class="mobile-nav-link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-overlay"></div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: var(--spacing-12); padding-bottom: var(--spacing-8); background-color: var(--color-gray-50);">
+      <div class="container">
+        <div class="breadcrumb">
+          <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+          <span class="breadcrumb-separator">›</span>
+          <div class="breadcrumb-item active">Courses</div>
+        </div>
+
+        <h1 class="section-title">Our Courses</h1>
+        <p class="section-subtitle">Discover our comprehensive collection of online courses</p>
+      </div>
+    </section>
+
+    <!-- Courses Content -->
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="blog-filters">
+          <div class="blog-search">
+            <input
+              type="search"
+              class="form-input course-search"
+              placeholder="Search courses..."
+              aria-label="Search courses"
+            >
+          </div>
+
+          <div class="blog-category-filter">
+            <button class="category-filter active" data-category="all">All Categories</button>
+            <button class="category-filter" data-category="البرامج الاداريه والقياديه">البرامج الاداريه والقياديه</button>
+            <button class="category-filter" data-category="البرامج القانونيه والقضائيه">البرامج القانونيه والقضائيه</button>
+            <button class="category-filter" data-category="البرامج الاقتصاديه والماليه">البرامج الاقتصاديه والماليه</button>
+            <button class="category-filter" data-category="برامج التحول الرقمي وتكنولوجيا المعلومات">برامج التحول الرقمي وتكنولوجيا المعلومات</button>
+            <button class="category-filter" data-category="برامج التنميه البشريه وبناء القدرات">برامج التنميه البشريه وبناء القدرات</button>
+            <button class="category-filter" data-category="برامج السياحه والفنادق">برامج السياحه والفنادق</button>
+            <button class="category-filter" data-category="برامج الصناعه والتجاره">برامج الصناعه والتجاره</button>
+            <button class="category-filter" data-category="برامج التنميه المستدامه والطاقه والبيئه">برامج التنميه المستدامه والطاقه والبيئه</button>
+            <button class="category-filter" data-category="برامج العلاقات الدوليه والدبلوماسيه">برامج العلاقات الدوليه والدبلوماسيه</button>
+            <button class="category-filter" data-category="برامج الاعلام والعلاقات العامه">برامج الاعلام والعلاقات العامه</button>
+          </div>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="courses-grid">
+          <!-- Courses will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section" style="background-color: var(--color-gray-50);">
+      <div class="container text-center">
+        <h2 class="section-title">Subscribe to Our Newsletter</h2>
+        <p class="section-subtitle mb-8">Get the latest course updates and offers delivered to your inbox</p>
+        <form style="max-width: 500px; margin: 0 auto; display: flex; gap: var(--spacing-3);">
+          <input
+            type="email"
+            class="form-input"
+            placeholder="Enter your email"
+            style="flex: 1;"
+            required
+          >
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About EduLearn</h3>
+          <p>EduLearn is a leading online learning platform dedicated to providing quality education to everyone, everywhere.</p>
+          <div class="footer-social">
+            <i class="fa-brands fa-twitter"><a href="#"></a></i>
+            <i class="fa-brands fa-facebook-f"><a href="#"></a></i>
+            <i class="fa-brands fa-youtube"><a href="#"></a></i>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="courses.html" class="footer-link">Courses</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <div class="footer-links">
+            <a href="courses.html?category=web-development" class="footer-link">Web Development</a>
+            <a href="courses.html?category=data-science" class="footer-link">Data Science</a>
+            <a href="courses.html?category=design" class="footer-link">Design</a>
+            <a href="courses.html?category=business" class="footer-link">Business</a>
+            <a href="courses.html?category=marketing" class="footer-link">Marketing</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#help" class="footer-link">Help Center</a>
+            <a href="#terms" class="footer-link">Terms of Service</a>
+            <a href="#privacy" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Contact Support</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <button class="language-switcher">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

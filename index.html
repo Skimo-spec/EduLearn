@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduLearn - Learn without limits. Discover thousands of courses and start your learning journey today.">
+  <title>EduLearn - Online Learning Platform</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+        
+        <!-- Cart -->
+        <a href="checkout.html" class="btn btn-ghost" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+        
+        <!-- Auth Buttons (shown when not logged in) -->
+        <div class="auth-buttons" style="display: flex; gap: var(--spacing-3);">
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+        
+        <!-- User Menu (shown when logged in) -->
+        <div class="user-menu dropdown" style="display: none;">
+          <button class="dropdown-trigger btn btn-ghost">
+            <img src="" alt="User" class="user-avatar" style="width: 32px; height: 32px; border-radius: 50%;">
+            <span class="user-name"></span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="profile.html" class="dropdown-item">Profile</a>
+            <a href="admin.html" class="dropdown-item admin-only" style="display: none;">Admin Dashboard</a>
+            <div class="dropdown-divider"></div>
+            <a href="#logout" class="dropdown-item logout-btn">Logout</a>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </span>
+      <button class="modal-close" aria-label="Close Menu">×</button>
+    </div>
+    <ul class="mobile-nav-menu">
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="checkout.html" class="mobile-nav-link">Cart</a></li>
+      <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+      <li><a href="signup.html" class="mobile-nav-link">Sign Up</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Learn Without Limits</h1>
+          <p class="hero-subtitle">Discover thousands of courses and start your learning journey today with expert instructors from around the world.</p>
+          <div class="hero-actions">
+            <a href="courses.html" class="btn btn-secondary btn-lg">Browse Courses</a>
+            <a href="signup.html" class="btn btn-outline btn-lg" style="background-color: rgba(255,255,255,0.1); border-color: white; color: white;">Become an Instructor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="section features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose EduLearn</h2>
+          <p class="section-subtitle">Everything you need to succeed in your learning journey</p>
+        </div>
+        
+        <div class="grid feature-grid">
+          <div class="card feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Self-Paced Learning</h3>
+            <p class="feature-description">Learn at your own pace, anytime and anywhere. Access courses on any device.</p>
+          </div>
+          
+          <div class="card feature-card">
+            <div class="feature-icon">🏆</div>
+            <h3 class="feature-title">Certificates</h3>
+            <p class="feature-description">Earn certificates upon course completion to showcase your achievements.</p>
+          </div>
+          
+          <div class="card feature-card">
+            <div class="feature-icon">👥</div>
+            <h3 class="feature-title">Community</h3>
+            <p class="feature-description">Join a community of learners and instructors from around the world.</p>
+          </div>
+          
+          <div class="card feature-card">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title">24/7 Support</h3>
+            <p class="feature-description">Get help whenever you need it with our dedicated support team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Popular Courses Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Popular Courses</h2>
+          <p class="section-subtitle">Explore our most popular courses</p>
+        </div>
+        
+        <div class="grid course-grid courses-grid">
+          <!-- Courses will be dynamically loaded here by JavaScript -->
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="courses.html" class="btn btn-primary btn-lg">View All Courses</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What Our Students Say</h2>
+          <p class="section-subtitle">Join thousands of satisfied learners</p>
+        </div>
+        
+        <div class="grid grid-responsive">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"EduLearn has transformed my career. The courses are well-structured and the instructors are top-notch!"</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=random" alt="Sarah Johnson" class="testimonial-avatar">
+              <div class="testimonial-info">
+                <h4>Sarah Johnson</h4>
+                <p>Web Developer</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <p class="testimonial-text">"I love the flexibility of learning at my own pace. The platform is easy to use and the content is excellent."</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Mike+Chen&background=random" alt="Mike Chen" class="testimonial-avatar">
+              <div class="testimonial-info">
+                <h4>Mike Chen</h4>
+                <p>Data Scientist</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The certificates I earned helped me land my dream job. Highly recommend EduLearn to anyone!"</p>
+            <div class="testimonial-author">
+              <img src="https://ui-avatars.com/api/?name=Emma+Davis&background=random" alt="Emma Davis" class="testimonial-avatar">
+              <div class="testimonial-info">
+                <h4>Emma Davis</h4>
+                <p>UX Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--color-gray-50);">
+      <div class="container text-center">
+        <h2 class="section-title">Ready to Start Learning?</h2>
+        <p class="section-subtitle mb-8">Join thousands of students already learning on EduLearn</p>
+        <a href="signup.html" class="btn btn-primary btn-lg">Get Started Today</a>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- About -->
+        <div class="footer-section">
+          <h3>About EduLearn</h3>
+          <p>EduLearn is a leading online learning platform dedicated to providing quality education to everyone, everywhere.</p>
+          <div class="footer-social">
+            <i class="fa-brands fa-twitter"><a href="#"></a></i>
+                <i class="fa-brands fa-facebook-f"><a href="#"></a></i>
+                <i class="fa-brands fa-youtube"><a href="#"></a></i>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="courses.html" class="footer-link">Courses</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+          </div>
+        </div>
+        
+        <!-- Categories -->
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <div class="footer-links">
+            <a href="courses.html?category=web-development" class="footer-link">Web Development</a>
+            <a href="courses.html?category=data-science" class="footer-link">Data Science</a>
+            <a href="courses.html?category=design" class="footer-link">Design</a>
+            <a href="courses.html?category=business" class="footer-link">Business</a>
+            <a href="courses.html?category=marketing" class="footer-link">Marketing</a>
+          </div>
+        </div>
+        
+        <!-- Support -->
+        <div class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#help" class="footer-link">Help Center</a>
+            <a href="#terms" class="footer-link">Terms of Service</a>
+            <a href="#privacy" class="footer-link">Privacy Policy</a>
+            <a href="contact.html" class="footer-link">Contact Support</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <button class="language-switcher">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Toast Container (for notifications) -->
+  <div class="toast-container"></div>
+  
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+  
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

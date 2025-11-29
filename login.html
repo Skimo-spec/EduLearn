@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to EduLearn - Access your courses and continue learning">
+  <title>Login - EduLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="login">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo">
+        <span>📚</span>
+        <span>EduLearn</span>
+      </a>
+      
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="language-switcher" aria-label="Switch Language">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <div class="auth-container">
+      <div class="auth-card">
+        <!-- Header -->
+        <div class="auth-header">
+          <h1 class="auth-title">Welcome Back</h1>
+          <p class="auth-subtitle">Login to continue your learning journey</p>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="loginForm" novalidate>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label required">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="Enter your email"
+              required
+              autocomplete="email"
+            >
+          </div>
+          
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password" class="form-label required">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form-input" 
+              placeholder="Enter your password"
+              required
+              minlength="8"
+              autocomplete="current-password"
+            >
+          </div>
+          
+          <!-- Remember Me & Forgot Password -->
+          <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+            <label style="display: flex; align-items: center; gap: var(--spacing-2); cursor: pointer;">
+              <input type="checkbox" name="rememberMe" class="form-checkbox">
+              <span>Remember me</span>
+            </label>
+            <a href="#forgot-password" style="color: var(--color-primary); font-size: var(--font-size-sm);">Forgot Password?</a>
+          </div>
+          
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Login
+          </button>
+        </form>
+        
+        <!-- Demo Credentials Info -->
+        <div class="alert alert-info mt-6">
+          <span class="alert-icon">ℹ️</span>
+          <div>
+            <strong>Demo Credentials:</strong><br>
+            <small>
+              Admin: admin@edulearn.com / Admin123<br>
+              Instructor: instructor@edulearn.com / Instructor123<br>
+              Student: student@edulearn.com / Student123
+            </small>
+          </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="auth-footer">
+          <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <button class="language-switcher">
+          <span>🌐</span>
+          <span class="lang-text">English</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
+<!-- Scroll to Top Button -->  
+<button class="scroll-to-top" aria-label="Scroll to top"></button> 
